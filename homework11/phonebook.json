@@ -1,0 +1,20 @@
+{
+   "phonebook": [
+      {
+         "first name": "taras",
+         "last name": "feshchuk",
+         "full name": "taras f",
+         "phone number": "380634898344",
+         "city": "lviv",
+         "state": "ukraine"
+      },
+      {
+         "first name": "akula",
+         "last name": "s",
+         "full name": "akula s",
+         "phone number": "356468457366",
+         "city": "tumen",
+         "state": "russia"
+      }
+   ]
+}
