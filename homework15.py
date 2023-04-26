@@ -43,9 +43,11 @@ class TVController:  # create a class
         self.channel_current = channel_current
 
     def first_channel(self):  # create a method that returns the first channel from the list
+        self.channel_current = 0
         return self.channels[0]
 
     def last_channel(self):  # create a method that returns the last channel from the list
+        self.channel_current = len(self.channels) - 1
         return self.channels[-1]
 
     def turn_channel(self, number_channel):  # create a method that will return the specified channel
@@ -89,20 +91,19 @@ class TVController:  # create a class
 
     # create a method that shows us whether the channel number and name are in the channel list
     def is_exist(self, number_string):
-        self.number_string = number_string  # initialize the attribute of our instance
         # if the entered number is in a tuple from 1 to the value of the length of our list +1, then return "yes"
-        if self.number_string in range(1, len(self.channels) + 1):
+        if number_string in range(1, len(self.channels) + 1):
             return 'Yes'
-        elif self.number_string in self.channels:  # if the entered channel name is in our list, then return its name
-            return self.number_string
+        elif number_string in self.channels:  # if the entered channel name is in our list, then return its name
+            return number_string
         else:  # in any other case print "no"
             return 'No'
 
 
 controller = TVController(CHANNELS)  # create an instance in which to pass our list as an attribute
-print(controller.next_channel(), controller.previous_channel())
-print(controller.current_channel())
-print(controller.is_exist('Abuba'))
+print(controller.last_channel(), controller.next_channel(), controller.current_channel())
+print(controller.turn_channel(1))
+# print(controller.is_exist('Abuba'))
 
 
 
