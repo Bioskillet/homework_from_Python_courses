@@ -1,38 +1,43 @@
 # task_1
 
-class Person:
+class Person:  # Creating a Person class
 
-    def __init__(self, first_name, last_name, age):
+    def __init__(self, first_name, last_name, age):  # Constructor to initialize a Person object with first_name,
+        # last_name and age
         self.first_name = first_name
         self.last_name = last_name
         self.age = age
 
-    def __str__(self):
+    def __str__(self):  # create a string method that will display full information about the person.
         return self.first_name + ' ' + self.last_name + ' ' + str(self.age)
 
-    def __repr__(self):
+    def __repr__(self):  # create a repr method that will output only the first and last name.
         return self.first_name + ' ' + self.last_name
 
 
-class Teacher(Person):
+class Teacher(Person):  # create a Teacher class that imitates the Person class
 
-    def __init__(self, first_name, last_name, age, salary, subject):
-        super().__init__(first_name, last_name, age)
+    def __init__(self, first_name, last_name, age, salary, subject):  # Constructor to initialize a Teacher object with
+        # first_name, last_name, age, salary and subject
+        super().__init__(first_name, last_name, age)  # at the same time, we note that we use parameters that are
+        # already initialized in the person class
         self.salary = salary
         self.subject = subject
 
-    def __str__(self):
-        return self.first_name + ' ' + self.last_name + ' ' + str(self.age) + ' ' + str(self.salary) + ' ' + self.subject
+    def __str__(self):  # create a string method that will display full information about the teacher.
+        return self.first_name + ' ' + self.last_name + ' ' + str(self.age) + ' ' + str(self.salary) + ' ' + \
+            self.subject
 
 
+class Student(Person):  # create a Student class that imitates the Person class
 
-class Student(Person):
-
-    def __init__(self, first_name, last_name, age, student_class):
-        super().__init__(first_name, last_name, age)
+    def __init__(self, first_name, last_name, age, student_class):  # Constructor to initialize a Student object with
+        # first_name, last_name, age and student_class
+        super().__init__(first_name, last_name, age)  # at the same time, we note that we use parameters that are
+        # already initialized in the person class
         self.student_class = student_class
 
-    def __str__(self):
+    def __str__(self):  # create a string method that will display full information about the student.
         return self.first_name + ' ' + self.last_name + ' ' + str(self.age) + ' ' + str(self.student_class)
 
 
@@ -48,31 +53,35 @@ print(student.__repr__())
 
 # task_2
 
-class Mathematician:
 
-    def square_nums(self, numbers_list):
+class Mathematician:  # Creating a Mathematician class
+
+    def square_nums(self, numbers_list):  # create a method in which a list of numbers will be accepted as a parameter
         self.numbers_list = numbers_list
-        new_numbers_list = []
-        for number in self.numbers_list:
+        new_numbers_list = []  # create an empty list
+        for number in self.numbers_list:  # indicate that the number should go through the list and add all the numbers
+            # to the new list, at the same time bringing them up to a square
             new_numbers_list.append(number ** 2)
         return new_numbers_list
 
-    def remove_positives(self, numbers_list):
+    def remove_positives(self, numbers_list):  # create a method in which a list of numbers will be accepted as
+        # a parameter
         self.numbers_list = numbers_list
-        new_number_list = []
-        for number in self.numbers_list:
+        new_number_list = []  # create an empty list
+        for number in self.numbers_list:  # indicate that the number should go through the list and add all numbers
+            # less than 0 to the new list
             if number < 0:
                 new_number_list.append(number)
         return new_number_list
 
-    def filter_leaps(self, numbers_list):
+    def filter_leaps(self, numbers_list):  # create a method in which a list of numbers will be accepted as
         self.numbers_list = numbers_list
-        new_number_list = []
-        for number in self.numbers_list:
+        new_number_list = []  # create an empty list
+        for number in self.numbers_list:  # indicate that the number should go through the list and add all the numbers 
+            # that are divisible by 400 or 4 without a remainder to the new list
             if number % 400 == 0 or number % 4 == 0:
                 new_number_list.append(number)
         return new_number_list
-
 
 
 m = Mathematician()
