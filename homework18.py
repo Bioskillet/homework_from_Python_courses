@@ -80,6 +80,8 @@ worker1 = Worker(11, "Mike Johnson", "ABC Inc.", boss1)
 worker2 = Worker(12, "Lisa Brown", "ABC Inc.", boss1)
 print("Boss1 name:", boss1.name)
 print("Worker1's boss name:", worker1.boss.name)
+worker1.boss = boss2
+print("Worker1's boss name:", worker1.boss.name)
 boss1.add_worker(worker2)
 print("Workers for boss1:", [worker.name for worker in boss1.workers])
 
