@@ -83,7 +83,7 @@ print("Worker1's boss name:", worker1.boss.name)
 boss1.add_worker(worker2)
 print("Workers for boss1:", [worker.name for worker in boss1.workers])
 
-
+# task_3
 class TypeDecorators:
     @staticmethod
     def to_int(func):  # a static method that takes in a function and returns a new function that converts its output to
