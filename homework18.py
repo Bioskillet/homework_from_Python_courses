@@ -60,7 +60,7 @@ class Worker:  # initializes an instance of Worker with an id_, name, company an
         self.id = id_
         self.name = name
         self.company = company
-        self._boss = boss
+        self.boss = boss
 
     @property  # create a property called boss that returns the value of the _boss instance variable
     def boss(self):
